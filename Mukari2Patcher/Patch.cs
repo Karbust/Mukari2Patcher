@@ -20,7 +20,6 @@ namespace Mukari2Patcher
             {
                 try
                 {
-
                     string[] patchList = Net.DownloadPatchList(Configs.Settings.ServerListUrl);
 
                     List<Configs.File> files = Net.ProcessPatchList(patchList);
@@ -34,9 +33,7 @@ namespace Mukari2Patcher
                     Net.InvalidFiles = enumerable.ToList();
 
                     if (Net.InvalidFiles.Count > 0)
-                    {
                         Net.DownloadFile(0);
-                    }
                     else
                     {
                         UI.Window.ProgressBarTotal.Value = 100;
@@ -62,7 +59,6 @@ namespace Mukari2Patcher
 
         public class UI
         {
-
             public static MainWindow Window = null;
             public static long TotalSize = 0;
             public static long LastBytes = 0;
@@ -123,7 +119,6 @@ namespace Mukari2Patcher
                     client.Proxy = null;
                     string @htmlCode = "";
 
-
                     htmlCode = client.DownloadString(url);
 
                     htmlCode = Regex.Replace(htmlCode, @"^\s*$\n|\r", "", RegexOptions.Multiline).TrimEnd();
@@ -142,7 +137,6 @@ namespace Mukari2Patcher
                 {
                     throw new Exception(Texts.GetText("UNKNOWNERROR", exception.ToString()));
                 }
-
             }
 
             public static List<Configs.File> ProcessPatchList(string[] list)
@@ -187,8 +181,6 @@ namespace Mukari2Patcher
 
                     if (file.Name.Contains(@"\"))
                         Directory.CreateDirectory(Path.GetDirectoryName(file.Name));
-
-                    //MessageBox.Show(Path.GetDirectoryName(file.name) + "\n" + file.name);
 
                     WebClient webClient = new WebClient();
                     webClient.Proxy = null;
