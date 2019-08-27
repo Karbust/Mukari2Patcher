@@ -40,7 +40,6 @@ namespace Mukari2Patcher
                         UI.Window.ProgressBarCurrent.Value = 100;
                         UI.SetStartStatus(true);
                     }
-
                 }
                 catch (Exception ex)
                 {
@@ -54,7 +53,6 @@ namespace Mukari2Patcher
                 MessageBox.Show(Texts.GetText("NONETWORK"));
                 Application.Current.Shutdown();
             }
-
         }
 
         public class UI
@@ -162,7 +160,6 @@ namespace Mukari2Patcher
                         nf.IsUpToDate = File.Exists(fileName) && localFile.Length == fileSize && (!Configs.Settings.CheckFilesByHash || GetMd5HashFromFile(fileName) == fileHash);
                         files.Add(nf);
                     }
-
                 }
                 catch (Exception ex)
                 {
