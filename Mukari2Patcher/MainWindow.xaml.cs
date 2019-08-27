@@ -1,4 +1,4 @@
-ï»¿using System;
+using System;
 using System.Windows;
 using System.Windows.Input;
 using System.Runtime.InteropServices;
@@ -27,7 +27,7 @@ namespace Mukari2Patcher
             }
             catch (Exception)
             {
-                MessageBox.Show("NÃ£o foi possÃ­vel abrir o ficheiro " + Configs.Settings.BinaryName + ".", Configs.Settings.ServerName, MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Não foi possível abrir o ficheiro " + Configs.Settings.BinaryName + ".", Configs.Settings.ServerName, MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 

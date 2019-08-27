@@ -1,4 +1,4 @@
-﻿namespace Mukari2Patcher
+namespace Mukari2Patcher
 {
     class Configs
     {
